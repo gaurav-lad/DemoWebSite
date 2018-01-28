@@ -1,0 +1,9 @@
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\bin\DemoWebSite.dll.config
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\bin\DemoWebSite.dll
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\bin\DemoWebSite.pdb
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\obj\Debug\DemoWebSite.csprojResolveAssemblyReference.cache
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\obj\Debug\DemoWebSite.csproj.CoreCompileInputs.cache
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\obj\Debug\DemoWebSite.dll
+C:\gaurav_workbench\DemoWebSite\DemoWebSite\DemoWebSite\obj\Debug\DemoWebSite.pdb
