@@ -26,3 +26,13 @@ a{
     display: block;
     padding: 5px;
 }
+
+.blockList {
+    display: block;
+    font-size: xx-large;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+}
