@@ -44,5 +44,35 @@ namespace DemoWebSite
             JavaScriptSerializer js = new JavaScriptSerializer();
             Context.Response.Write(js.Serialize(listStudents));
         }
+
+
+        [WebMethod]
+        public void GetStudent(int id)
+        {
+            Student student = new Student();
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (MySqlConnection mycs = new MySqlConnection(cs))
+            {
+                MySqlCommand cmd = new MySqlCommand("Select * from tblstudents where Id = @id", mycs);
+                MySqlParameter param = new MySqlParameter()
+                {
+                    ParameterName = "@id",
+                    Value = id
+                };
+                cmd.Parameters.Add(param);
+                mycs.Open();
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    student.id = Convert.ToInt32(rdr["Id"]);
+                    student.name = rdr["Name"].ToString();
+                    student.gender = rdr["Gender"].ToString();
+                    student.city = rdr["City"].ToString();
+                }
+                // Response .Write("Connection Successful");
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(student));
+        }
     }
 }

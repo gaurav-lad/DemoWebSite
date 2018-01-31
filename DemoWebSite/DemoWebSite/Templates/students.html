@@ -4,7 +4,9 @@
 <div class="blockList">
     <ul>
         <li ng-repeat="student in students">
+            <a href="students/{{student.id}}">
             {{student.name}}
+            </a>
         </li>
     </ul>
 </div>
