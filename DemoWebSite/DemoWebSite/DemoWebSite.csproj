@@ -159,6 +159,7 @@
     <Content Include="Templates\courses.html" />
     <Content Include="Templates\home.html" />
     <Content Include="Templates\students.html" />
+    <Content Include="Templates\studentsDetails.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
