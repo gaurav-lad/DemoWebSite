@@ -17,7 +17,15 @@ var app = angular.module("Demo", ["ngRoute"])
             .when("/students", {
                 templateUrl: "Templates/students.html",
                 controller: "studentsController",
-                controllerAs: "studentsCtrl"
+                controllerAs: "studentsCtrl",
+                resolve: {
+                    studentsList: function ($http) {
+                        return $http.get("StudentService.asmx/GetAllStudents")
+                            .then(function (response) {
+                                return response.data;
+                            })
+                    }
+                }
             })
             .when("/students/:id", {
                 templateUrl: "Templates/studentsDetails.html",
@@ -40,12 +48,14 @@ var app = angular.module("Demo", ["ngRoute"])
     .controller("coursesController", function () {
         this.courses = ["C#", "JAVA", "Angular", "MySQL"];
     })
-    .controller("studentsController", function ($http, $route, $scope, $location) {
-        $scope.$on("$locationChangeStart", function (event, next, current) {
-            if (!confirm("Are you sure you want to navigate away from this page to "+next)) {
-                event.preventDefault();
-            }
-        })
+    .controller("studentsController", function (studentsList, $route, $location) {
+    
+    //.controller("studentsController", function (studentsList, $route, $scope, $location) {
+        //$scope.$on("$locationChangeStart", function (event, next, current) {
+        //    if (!confirm("Are you sure you want to navigate away from this page to "+next)) {
+        //        event.preventDefault();
+        //    }
+        //})
 
         var vm = this;
 
@@ -61,10 +71,8 @@ var app = angular.module("Demo", ["ngRoute"])
         vm.reloadData = function () {
             $route.reload();
         }
-        $http.get("StudentService.asmx/GetAllStudents")
-            .then(function (response) {
-                vm.students = response.data;
-            })
+
+        vm.students = studentsList;
     })
     .controller("studentDetailsController", function ($http, $routeParams) {
         var vm = this;
